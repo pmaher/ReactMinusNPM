@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>React Minus NPM</title>
+        <script src="/js/react.16.0.0.min.js"></script>
+        <script src="/js/react-dom.16.0.0.min.js"></script>
+    </head>
+    <!--based on the tutorial found at: https://medium.com/@clmyles/react-without-npm-babel-or-webpack-1e9a6049714 -->
+    <body>
+        <div id="root"></div>
+
+        <script>
+            window.onload = function()
+            {
+                class HelloWorld extends React.Component
+                {
+                    render()
+                    {
+                        return React.createElement('h1', null, 'Hello World, ' + this.props.greeting);
+                    }
+                }
+                ReactDOM.render(
+                    React.createElement(HelloWorld, { greeting : 'I\'m back!' }),
+                    document.getElementById('root')
+                );
+            };
+        </script>
+    </body>
+</html>
